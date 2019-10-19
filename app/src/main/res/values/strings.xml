@@ -2,4 +2,5 @@
     <string name="app_name">BlockChain</string>
     <string name="currency_rate">$%.2f</string>
     <string name="chain_chart">BlockChain Chart</string>
+    <string name="graph_title">%s chart of the last week</string>
 </resources>
