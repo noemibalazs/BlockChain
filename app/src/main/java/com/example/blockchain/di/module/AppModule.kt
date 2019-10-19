@@ -3,6 +3,7 @@ package com.example.blockchain.di.module
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
+import com.example.blockchain.helper.MySharedPreferency
 import com.example.blockchain.room.CurrencyDao
 import com.example.blockchain.room.CurrencyDataBase
 import com.example.blockchain.util.CURRENCY_DB
@@ -27,6 +28,12 @@ class AppModule(val app: Application) {
     @Singleton
     fun getCurrencyDao(db: CurrencyDataBase): CurrencyDao{
         return db.getCurrencyDao()
+    }
+
+    @Provides
+    @Singleton
+    fun getSharedPref(): MySharedPreferency{
+        return MySharedPreferency(app.getSharedPreferences("My pref", Context.MODE_PRIVATE))
     }
 
 }

@@ -7,4 +7,4 @@ data class Crypto(
     @field:SerializedName("BTC") val btc: CurrencyEntity,
     @field:SerializedName("ETH") val eth: CurrencyEntity,
     @field:SerializedName("LTC") val ltc: CurrencyEntity
-) {}
+)
