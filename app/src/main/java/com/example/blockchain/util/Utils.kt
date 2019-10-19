@@ -26,15 +26,6 @@ fun loadPicture(link:String, image: ImageView){
         .into(image)
 }
 
-fun Crypto.updateRates(rates: Rates?){
-    rates?.let {
-        this.bch.rate = it.bch
-        this.btc.rate = it.btc
-        this.eth.rate = it.eth
-        this.ltc.rate = it.ltc
-    }
-
-}
 
 fun Context.openActivity(dest: Class<*>){
     this.startActivity(Intent(this,dest ))

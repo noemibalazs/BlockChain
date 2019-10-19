@@ -18,4 +18,7 @@ interface CurrencyDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addCurrencyList(list: MutableList<CurrencyEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun addEntity2DB(entity: CurrencyEntity)
 }

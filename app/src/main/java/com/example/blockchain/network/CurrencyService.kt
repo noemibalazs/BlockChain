@@ -1,7 +1,7 @@
 package com.example.blockchain.network
 
 import com.example.blockchain.data.CryptoCurrencies
-import com.example.blockchain.data.Rates
+import com.example.blockchain.data.CurrencyRates
 import com.example.blockchain.data.TimeFrameRates
 import retrofit2.Call
 import retrofit2.http.GET
@@ -13,7 +13,7 @@ interface CurrencyService {
     fun getCryptoCurrencyList(@Query("access_key") key:String): Call<CryptoCurrencies>
 
     @GET("live")
-    fun getCryptoCurrencyRates(@Query("access_key") key: String): Call<Rates>
+    fun getCryptoCurrencyRates(@Query("access_key") key: String): Call<CurrencyRates>
 
     @GET("timeframe")
     fun getCryptoCurrencyTimeFrameRates(@Query("access_key") key: String,

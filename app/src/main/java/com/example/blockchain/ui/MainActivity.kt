@@ -8,7 +8,6 @@ import com.example.blockchain.R
 import com.example.blockchain.adapter.EntityAdapter
 import com.example.blockchain.application.MyApp
 import com.example.blockchain.data.CurrencyEntity
-import com.example.blockchain.helper.MySharedPreferency
 import com.example.blockchain.room.CurrencyDao
 import com.example.blockchain.viewmodel.CurrencyViewModel
 import com.example.blockchain.viewmodel.CurrencyViewModelFactory
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     @JvmField
-    var currencyDao: CurrencyDao ?=null
+    var currencyDao: CurrencyDao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +30,23 @@ class MainActivity : AppCompatActivity() {
         populateUI()
     }
 
-    private fun setRV(){
+    private fun setRV() {
         currencyRV.setHasFixedSize(true)
     }
 
+
     private fun populateUI(){
-        val currencyFactory = CurrencyViewModelFactory(currencyDao!!)
-        val viewModel = ViewModelProviders.of(this, currencyFactory).get(CurrencyViewModel::class.java)
-        viewModel.getEntityList().observe(this, Observer {
-            currencyRV.adapter = EntityAdapter(it)
-        })
+        val factory = CurrencyViewModelFactory(currencyDao!!)
+        val currencyVM = ViewModelProviders.of(this, factory).get(CurrencyViewModel::class.java)
+        currencyVM.getEntityList().observe(
+            this,
+            object : Observer<MutableList<CurrencyEntity>> {
+                override fun onChanged(list: MutableList<CurrencyEntity>?) {
+                    currencyVM.getEntityList().removeObserver(this)
+                    list?.let {
+                        currencyRV.adapter = EntityAdapter(it)
+                    }
+                }
+            })
     }
 }

@@ -11,5 +11,5 @@ data class CurrencyEntity(
     @field:SerializedName("name") val name: String,
     @field:SerializedName("name_full") val fullName: String,
     @field:SerializedName("icon_url") val iconUrl: String,
-    var rate: Double?
+    var rate: Double?=null
 )
