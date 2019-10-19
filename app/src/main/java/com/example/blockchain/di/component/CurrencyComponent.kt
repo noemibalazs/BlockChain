@@ -2,6 +2,7 @@ package com.example.blockchain.di.component
 
 import com.example.blockchain.di.module.CurrencyModule
 import com.example.blockchain.di.scope.CurrencyScope
+import com.example.blockchain.ui.GraphActivity
 import com.example.blockchain.ui.MainActivity
 import com.example.blockchain.ui.SplashActivity
 import dagger.Component
@@ -12,4 +13,5 @@ interface CurrencyComponent {
 
     fun injectMain(main: MainActivity)
     fun injectSplash(splash: SplashActivity)
+    fun injectGraph(graph:GraphActivity)
 }
