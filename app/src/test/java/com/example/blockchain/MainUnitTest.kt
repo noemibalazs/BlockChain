@@ -1,9 +1,5 @@
 package com.example.blockchain
 
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.blockchain.adapter.EntityAdapter
-import com.example.blockchain.data.CurrencyEntity
 import com.example.blockchain.ui.MainActivity
 import org.junit.Assert
 import org.junit.Before
@@ -29,5 +25,4 @@ class MainUnitTest {
     fun shouldNotBeNull(){
         Assert.assertNotNull(mainActivity)
     }
-
 }
