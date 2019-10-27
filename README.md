@@ -2,7 +2,7 @@ BlockChain
 
 TO DO:
 
-  1. Design and implent a Carousel application using Conlayer API
+  1. Design and implent a BlockChain application using Conlayer API
   2. Fetching data using Retrofit
   3. Storing data using Room
   4. Implementing Dagger2 dependency injection and charts
