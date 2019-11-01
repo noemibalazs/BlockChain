@@ -1,5 +1,7 @@
 BlockChain
 
+Please get a valid Api key in order to run the application!
+
 TO DO:
 
   1. Design and implent a BlockChain application using Conlayer API
